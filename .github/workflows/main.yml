@@ -26,7 +26,7 @@ jobs:
           INVISIRISK_PORTAL: https://app.dev.veribom.com/
           #POLICY_AUTH_TOKEN: ${{ secrets.POLICY_AUTH_TOKEN }}
           #POLICY_URL: https://app.dev.veribom.com/
-            #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             # OPENAI_AUTH_TOKEN: ${{ secrets.OPENAI_AUTH_TOKEN }}
           #PSE_DEBUG_FLAG: --alsologtostderr
           #POLICY_LOG: t
