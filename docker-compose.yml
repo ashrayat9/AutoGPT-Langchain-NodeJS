@@ -1,14 +1,14 @@
 version: '3.5'
 services:
   pse-proxy:
-    image: invisirisk/pse:v1.0.3
+    image: kkisalaya/pse-proxy:dev
     container_name: pse-proxy
     user: root
     environment:
-      - INVISIRISK_JWT_TOKEN="123"
+      - INVISIRISK_JWT_TOKEN=WkxFvX05QDdcVUbN4AQPFNKVUo91hPpicvDitZL3RoJGEeKzzOSGaKXMeC34nEJbehBsxlT5DMF_RZ8-RQ1Lhg
       - PSE_DEBUG_FLAG=--alsologtostderr
       - POLICY_LOG=t
-      - INVISIRISK_PORTAL=http://beerceptor.cloud.veribom.local/api/mock/test/
+      - INVISIRISK_PORTAL=http://app.dev.veribom.com/
 
   node-app-1:
     image: node:18-alpine
