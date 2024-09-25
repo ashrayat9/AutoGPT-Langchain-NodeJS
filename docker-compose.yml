@@ -1,0 +1,33 @@
+version: '3.5'
+
+services:
+  version: '3.5'
+
+services:
+  pse-proxy:
+    image: invisirisk/pse:v1.0.3
+    container_name: pse-proxy
+    user: root
+    environment:
+      - INVISIRISK_JWT_TOKEN="123"
+      - PSE_DEBUG_FLAG=--alsologtostderr
+      - POLICY_LOG=t
+      - INVISIRISK_PORTAL=http://beerceptor.cloud.veribom.local/api/mock/test/
+
+  node-app-1:
+    image: node:18-alpine
+    container_name: node-app-1
+    user: root
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - SERVICE_NAME=node-app-1
+    volumes:
+      - ./entrypoints:/app/entrypoints
+      - ./package.json:/app/package.json
+      - ./src/project1/build.sh:/app/build.sh
+    working_dir: /app
+    entrypoint: ["/app/entrypoints/entrypoint.sh"]
+      #    command: ["tail -f /dev/null"]
+
+
