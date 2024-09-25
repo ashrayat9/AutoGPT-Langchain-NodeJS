@@ -12,14 +12,14 @@ permissions:
   packages: read
 
 jobs:
-  npm:
+  proxy:
     runs-on: ubuntu-latest
     #runs-on: self-hosted
 
     services:
       # Label used to access the service container
       pse:
-        image: kkisalaya/pse-proxy
+        image: kkisalaya/pse-proxy:dev
         env:
           PSE_DEBUG_FLAG: --alsologtostderr
           POLICY_LOG: t
